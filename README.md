@@ -1,10 +1,11 @@
-# Tis just a scratch...
+# Tis but a scratch...
 
-..project :)
+...project :)
 
 ## TODO something with...
 
 ### Testing
+Potential packages:
 - github.com/onsi/ginkgo/ginkgo
 - github.com/onsi/gomega
 
