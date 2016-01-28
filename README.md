@@ -19,10 +19,16 @@ Potential packages:
 - github.com/rs/cors
 - github.com/husobee/vestigo
 
-### RocksDB (or other key/value stores)
+### RocksDB/LevelDB (or other key/value stores)
 Potential packages:
 - github.com/tecbot/gorocksdb
 - github.com/boltdb/bolt
+- github.com/syndtr/goleveldb
+- github.com/jmhodges/levigo
+
+### JSON Web Tokens (JWT)
+Potential packages:
+- github.com/dgrijalva/jwt-go
 
 ### Serial port (USB)
 Potential packages:
