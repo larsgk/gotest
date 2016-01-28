@@ -6,7 +6,7 @@
 
 ### Testing
 Potential packages:
-- https://github.com/onsi/ginkgo/ginkgo
+- https://github.com/onsi/ginkgo
 - https://github.com/onsi/gomega
 
 ### WebSockets
