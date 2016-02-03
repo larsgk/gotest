@@ -36,6 +36,9 @@ Potential packages:
 - https://github.com/tarm/serial
 - https://github.com/jacobsa/go-serial
 
+Inspiration:
+- https://github.com/johnlauer/serial-port-json-server/blob/master/seriallist_windows.go
+
 ### Bluetooth LE
 Potential packages:
 - https://github.com/paypal/gatt
