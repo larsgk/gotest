@@ -38,6 +38,7 @@ Potential packages:
 
 Inspiration:
 - https://github.com/johnlauer/serial-port-json-server/blob/master/seriallist_windows.go
+(need to get the pnp description string - or vendorId/productId at least)
 
 ### Bluetooth LE
 Potential packages:
