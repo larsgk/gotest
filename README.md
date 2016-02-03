@@ -32,7 +32,7 @@ Potential packages:
 
 ### Serial port (USB)
 Potential packages:
-- github.com/facchinm/go-serial (seems best, listing, communicating, etc.)
+- https://github.com/facchinm/go-serial (seems best, listing, communicating, etc.)
 - https://github.com/tarm/serial
 - https://github.com/jacobsa/go-serial
 
