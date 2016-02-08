@@ -10,5 +10,8 @@ func main() {
 
 	http.HandleFunc("/now", handleNowEvent)
 	http.HandleFunc("/commports", handleListCommPortsEvent)
+
+	http.Handle("/", http.FileServer(http.Dir("./static")))
+
 	http.ListenAndServe(":3000", nil)
 }
