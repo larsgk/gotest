@@ -15,7 +15,7 @@ Potential packages:
 - https://github.com/googollee/go-socket.io
 
 ### Polymer frontend
-- https://www.polymer-project.org/1.0/https://www.polymer-project.org/1.0/
+- https://www.polymer-project.org/1.0/
 
 ### CORS
 Potential packages:
