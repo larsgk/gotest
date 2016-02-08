@@ -1,0 +1,23 @@
+{
+  "name": "static",
+  "homepage": "https://github.com/larsgk/gotest",
+  "authors": [
+    "Lars Knudsen <larsgk@gmail.com>"
+  ],
+  "description": "Front for gotest",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.1.1"
+  }
+}

@@ -19,7 +19,7 @@ type DaListEvent struct {
 }
 
 func handleNowEvent(w http.ResponseWriter, r *http.Request) {
-	daEvent := DaTimeEvent{"Now", time.Now().Unix()}
+	daEvent := DaTimeEvent{"Now", time.Now().UnixNano() / 1000000}
 
 	sendJsonEvent(w, daEvent)
 }

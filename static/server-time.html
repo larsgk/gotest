@@ -1,0 +1,20 @@
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="server-time">
+<template>
+    <iron-ajax auto url="/now" handle-as="json" on-response="ajaxResponse"></iron-ajax>
+    <div id="body">Now: {{now}} (UTS) = {{familiarNow}}</div>
+</template>
+<script>
+    Polymer({
+        ajaxResponse: function(request) {
+    		console.log(request.detail.response);
+    		var res = request.detail.response;
+    		if(res.Type === "Now") {
+    			this.now = res.Time;
+    			this.familiarNow = new Date(res.Time).toJSON();
+    		}
+        }
+    });
+</script>
+</dom-module>
