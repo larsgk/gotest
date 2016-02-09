@@ -44,5 +44,6 @@ func sendJsonEvent(w http.ResponseWriter, daEvent interface{}) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "private, no-cache")
 	w.Write(js)
 }

@@ -7,7 +7,7 @@
     <div>{{now}} (UTS) = {{familiarNow}}</div>
 </template>
 <script>
-    Polymer({
+    Polymer({id:"server-time",
         ajaxResponse: function(request) {
     		console.log(request.detail.response);
     		var res = request.detail.response;

@@ -9,7 +9,7 @@
     </template>
 </template>
 <script>
-    Polymer({
+    Polymer({ id:"comm-port-list",
         ajaxResponse: function(request) {
     		var res = request.detail.response;
     		if(res.Type === "CommPorts") {
