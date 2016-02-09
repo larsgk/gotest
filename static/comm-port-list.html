@@ -1,15 +1,19 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
 
 <dom-module id="comm-port-list">
 <template>
     <iron-ajax auto url="/commports" handle-as="json" on-response="ajaxResponse"></iron-ajax>
     <div>Comm Ports:</div>
+    <paper-listbox selected="0">
     <template is="dom-repeat" items="{{commPorts}}">
-            <span>Port {{index}}:  {{item}}</span><br>
+        <paper-item>Port {{index}}:  {{item}}</paper-item>
     </template>
+    </paper-listbox>
 </template>
 <script>
-    Polymer({ id:"comm-port-list",
+    Polymer({ is:"comm-port-list",
         ajaxResponse: function(request) {
     		var res = request.detail.response;
     		if(res.Type === "CommPorts") {

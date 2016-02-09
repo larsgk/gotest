@@ -18,6 +18,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.2.0",
-    "iron-ajax": "PolymerElements/iron-ajax#~1.1.1"
+    "iron-ajax": "PolymerElements/iron-ajax#~1.1.1",
+    "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
+    "polymer-themes": "^1.0.1"
   }
 }
