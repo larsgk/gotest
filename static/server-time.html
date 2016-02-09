@@ -3,7 +3,8 @@
 <dom-module id="server-time">
 <template>
     <iron-ajax auto url="/now" handle-as="json" on-response="ajaxResponse"></iron-ajax>
-    <div id="body">Now: {{now}} (UTS) = {{familiarNow}}</div>
+    <div>The server time is now:</div>
+    <div>{{now}} (UTS) = {{familiarNow}}</div>
 </template>
 <script>
     Polymer({

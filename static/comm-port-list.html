@@ -1,0 +1,22 @@
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="comm-port-list">
+<template>
+    <iron-ajax auto url="/commports" handle-as="json" on-response="ajaxResponse"></iron-ajax>
+    <div>Comm Ports:</div>
+    <template is="dom-repeat" items="{{commPorts}}">
+            <span>Port {{index}}:  {{item}}</span><br>
+    </template>
+</template>
+<script>
+    Polymer({
+        ajaxResponse: function(request) {
+    		var res = request.detail.response;
+    		if(res.Type === "CommPorts") {
+    			this.commPorts = res.Data;
+                console.log(this.commPorts);
+    		}
+        }
+    });
+</script>
+</dom-module>
