@@ -10,7 +10,7 @@
     <iron-ajax auto url="/commports" handle-as="json" on-response="ajaxResponse"></iron-ajax>
     <div>Comm Ports:</div>
     <paper-material elevation="1">
-        <paper-listbox selected="0">
+        <paper-listbox>
         <template is="dom-repeat" items="{{commPorts}}">
             <paper-item><paper-ripple></paper-ripple>Port {{index}}:  {{item}}</paper-item>
         </template>
