@@ -14,8 +14,9 @@ Potential packages:
 - https://github.com/gorilla/websocket
 - https://github.com/googollee/go-socket.io
 
-### Polymer frontend
-- https://www.polymer-project.org/1.0/
+### Frontend
+- https://www.polymer-project.org/1.0/  (Polymer - only modern browsers)
+- https://material.angularjs.org (UI tastes of polymer ... supports older IE browsers)
 
 ### CORS
 Potential packages:
