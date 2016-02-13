@@ -2,7 +2,7 @@
 
 <dom-module id="server-time">
 <template>
-    <iron-ajax id="ajax" url="/now" handle-as="json" on-response="ajaxResponse"></iron-ajax>
+    <iron-ajax id="ajax" url="/now" method="POST" handle-as="json" on-response="ajaxResponse"></iron-ajax>
     <div>The server time is now:</div>
     <div>{{now}} (UTS) = {{familiarNow}}</div>
 </template>

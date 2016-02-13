@@ -7,7 +7,7 @@
 
 <dom-module id="comm-port-list">
 <template>
-    <iron-ajax auto url="/commports" handle-as="json" on-response="ajaxResponse"></iron-ajax>
+    <iron-ajax auto url="/commports" method="POST" handle-as="json" on-response="ajaxResponse"></iron-ajax>
     <div>Comm Ports:</div>
     <paper-material elevation="1">
         <paper-listbox>
