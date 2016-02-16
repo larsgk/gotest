@@ -24,20 +24,33 @@
 
 <script type="text/javascript">
 // Just an experiment
-var websoc = new WebSocket('ws://127.0.0.1:3000/data');
+function goWebSockets() {
+    var websoc = new WebSocket('ws://127.0.0.1:3000/data');
 
-var rawData = "";
+    var rawData = "";
+    var timer;
 
-websoc.onopen = function () {
-  setInterval( function() {
-        websoc.send('Time:  ' + Date.now())
-    },1000);
-};
+    websoc.onopen = function () {
+      timer = setInterval( function() {
+            websoc.send('Time:  ' + Date.now())
+        },1000);
+    };
 
-websoc.onmessage = function(evt) {
-    console.log("DATA: ", evt.data);
-    rawData += evt.data + "<br>";
+    websoc.onmessage = function(evt) {
+        console.log("DATA: ", evt.data);
+        rawData += evt.data + "<br>";
+    }
+
+    websoc.onclose = function() {
+        clearInterval(timer);
+        console.log("WebSocket closed...");
+        setTimeout(function() {
+            goWebSockets()
+        }, 5000);
+    };
 }
+
+goWebSockets();
 
 </script>
 </html>

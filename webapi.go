@@ -60,7 +60,6 @@ func handleFavicon(w http.ResponseWriter, r *http.Request) {
 	for y := 0; y < 32; y++ {
 		for x := 0; x < 32; x++ {
 			m.SetNRGBA(x, y, color.NRGBA{uint8(x * 8), uint8((x + y) * 8), uint8(y) * 8, 255})
-
 		}
 	}
 	w.Header().Set("Content-Type", "image/png")
