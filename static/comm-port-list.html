@@ -12,7 +12,7 @@
     <paper-material elevation="1">
         <paper-listbox>
         <template is="dom-repeat" items="{{commPorts}}">
-            <paper-item><paper-ripple></paper-ripple>Port {{index}}:  {{item}}</paper-item>
+            <paper-item><paper-ripple></paper-ripple>Port {{item.Path}}:  {{item.DisplayName}}</paper-item>
         </template>
         </paper-listbox>
     </paper-material>

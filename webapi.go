@@ -20,7 +20,7 @@ type DaTimeEvent struct {
 
 type DaListEvent struct {
 	Type string
-	Data []string
+	Data []interface{}
 }
 
 func handleNowEvent(w http.ResponseWriter, r *http.Request) {
@@ -32,10 +32,12 @@ func handleNowEvent(w http.ResponseWriter, r *http.Request) {
 func handleListCommPortsEvent(w http.ResponseWriter, r *http.Request) {
 	daEvent := DaListEvent{Type: "CommPorts"}
 
+	start := time.Now()
 	ports, _ := comm.GetSerialPortList()
+	log.Printf("Serial port PnP lookup took %s\n", time.Since(start))
 
 	for _, port := range ports {
-		daEvent.Data = append(daEvent.Data, port.Name)
+		daEvent.Data = append(daEvent.Data, port)
 	}
 
 	sendJsonEvent(w, daEvent)

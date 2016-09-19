@@ -7,8 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Printf("Hello, simple web service :)\n")
-
 	r := mux.NewRouter()
 
 	r.HandleFunc("/favicon.png", handleFavicon)
@@ -24,5 +22,8 @@ func main() {
 
 	http.Handle("/", r)
 
-	http.ListenAndServe(":3000", nil)
+	port := "3000"
+
+	fmt.Printf("This is a simple web service serving on port %s\n", port)
+	http.ListenAndServe(":"+port, nil)
 }

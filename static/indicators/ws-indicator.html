@@ -1,0 +1,15 @@
+<link rel="import" href="../behaviors/ws-service.html">
+<dom-module id="ws-indicator">
+<template>
+    <div>AAAValue: {{wsData.state}}</div>
+</template>
+<script>
+    Polymer({
+      is: 'ws-indicator',
+      behaviors: [WebServiceBehavior],
+      ready: function() {
+        console.log("element ready", this.wsData);
+      }
+    });
+</script>
+</dom-module>

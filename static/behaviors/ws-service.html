@@ -1,0 +1,82 @@
+<script>
+
+var instances = [];
+var _wsGlobal = {
+  "state":"NOT_CONNECTED",
+  "data":""
+};
+
+function goWebSockets() {
+    var websoc = new WebSocket('ws://127.0.0.1:3000/data');
+    var rawData = "";
+    var timer;
+
+    websoc.onopen = function () {
+        console.log("WebSocket opened...");
+      _wsGlobal.state = "CONNECTED";
+      timer = setInterval( function() {
+            websoc.send('Time:  ' + Date.now())
+        }, 1000);
+    };
+
+    websoc.onmessage = function(evt) {
+        console.log("DATA: ", evt.data);
+        rawData += evt.data + "<br>";
+        _wsGlobal.data = evt.data;
+    }
+
+    websoc.onclose = function() {
+        console.log("WebSocket closed...");
+        _wsGlobal.state = "NOT_CONNECTED";
+        clearInterval(timer);
+        setTimeout(function() {
+            goWebSockets()
+        }, 5000);
+    };
+}
+
+goWebSockets();
+
+
+var WebServiceBehavior = {
+
+  properties: {
+    wsData: {
+      type: Object,
+      value : _wsGlobal,
+      notify: true
+    }
+  },
+
+  observers: [
+    '_stateChanged(wsData.state)',
+    '_dataChanged(wsData.data)'
+  ],
+
+  ready: function() {
+    Object.defineProperty(this.wsData, "state", {
+      set: function(value) {
+        this.notifyPath("wsData.state", value);
+      }.bind(this)
+    });
+    Object.defineProperty(this.wsData, "data", {
+      set: function(value) {
+        this.notifyPath("wsData.data", value);
+      }.bind(this)
+    });
+    console.log("WebSockets Behavior ready");
+    console.log("wsData", this.wsData, _wsGlobal);
+  },
+
+  _stateChanged: function(value) {
+    console.log("New state: ", value);
+    console.log("Global obj: ", this.wsData);
+  },
+
+  _dataChanged: function(value) {
+    console.log("New data: ", value);
+    console.log("Global obj: ", this.wsData);
+  }
+};
+
+</script>
